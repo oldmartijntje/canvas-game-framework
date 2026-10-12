@@ -1,61 +1,47 @@
-# NPM-PACKAGE-TEMPLATE
+# Canvas Game Framework
 
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
-
-A template for NPM packages in TypeScript.
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Scripts](#scripts)
-- [License](#license)
-- [Acknowledgments](#Acknowledgments)
+A game development framework for HTML Canvas.
 
 ## Prerequisites
 
-Ensure you have the following installed on your system:
-
-- **Bun**: [Installation Documentation](https://bun.sh/docs/installation)
-- **Node.js**: [Download and Installation](https://nodejs.org/)
-
-Make sure both are added to your system's PATH.
+- **Node.js**: [Download and installation](https://nodejs.org/)
+- **npm**: included with Node.js
 
 ## Installation
 
-Clone the repository:
+Install dependencies from the repository root:
 
 ```bash
-git clone https://github.com/Ram-Amoncar/npm-package-template.git your-package-name
-```
-
-Install dependencies:
-
-```bash
-bun install
+npm install
 ```
 
 ## Scripts
 
-- ```bun run build``` :arrow_right: Build the TypeScript code using tsup.
-- ```bun run test``` :arrow_right: Run Jest tests.
-- ```bun run test:watch``` :arrow_right: Run Jest tests in watch mode.
-- ```bun run coverage``` :arrow_right: Run Jest tests with coverage.
-- ```bun run format``` :arrow_right: Format code using Prettier.
-- ```bun run format:check``` :arrow_right: Check if code is formatted using Prettier.
-- ```bun run lint``` :arrow_right: Run ESLint for linting TypeScript files.
-- ```bun run lint:fix``` :arrow_right: Run ESLint with the --fix flag to - - automatically fix linting issues.
+- `npm run dev` :arrow_right: Rebuild the engine on change and serve the test game with Vite.
+- `npm run build` :arrow_right: Build the engine package using tsup.
+- `npm run build:game` :arrow_right: Build the private test game with Vite.
+- `npm run test` :arrow_right: Run the engine's Jest tests.
+- `npm run coverage` :arrow_right: Run the engine's tests with coverage.
+- `npm run lint` :arrow_right: Check code quality with Biome.
+
+The published npm package is [`packages/engine`](./packages/engine). The private test game in
+[`examples/test-game`](./examples/test-game) consumes the local workspace package and is never published.
+
+To publish only the engine:
+
+```bash
+npm publish -w packages/engine --access public
+```
 
 ## License
 
-This project is licensed under the Unlicense - see the [LICENSE](UNLICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file.
 
 ## Acknowledgments
 
-- [Jest](https://jestjs.io/) :arrow_right: Delightful JavaScript Testing.
-- [Tsup](https://tsup.egoist.sh/) :arrow_right: Zero-config TypeScript bundler.
-- [TypeScript](https://www.typescriptlang.org/) :arrow_right: Typed superset of JavaScript.
-- [Eslint](https://eslint.org/) :arrow_right: Pluggable linting utility for JavaScript and TypeScript.
-- [Prettier](https://prettier.io/) :arrow_right: Opinionated code formatter.
-- [Husky](https://typicode.github.io/husky/) :arrow_right: Git hooks made easy.
-- [Bun](https://bun.sh) :arrow_right: Incredibly fast JavaScript runtime.
+- [Jest](https://jestjs.io/) :arrow_right: JavaScript testing.
+- [Tsup](https://tsup.egoist.sh/) :arrow_right: TypeScript bundling.
+- [TypeScript](https://www.typescriptlang.org/) :arrow_right: Typed JavaScript.
+- [Husky](https://typicode.github.io/husky/) :arrow_right: Git hooks.
+- [Vite](https://vite.dev/) :arrow_right: The test game's development server.
+- [Biome](https://biomejs.dev/) :arrow_right: Formatting and linting.

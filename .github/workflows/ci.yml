@@ -3,7 +3,7 @@ name: Continuous Integration
 on: 
     push:
         branches: [main]
-        paths: [src/**, tests/**, package.json]
+        paths: [packages/**, tests/**, examples/**, package.json, package-lock.json]
 
 jobs:
   build:
