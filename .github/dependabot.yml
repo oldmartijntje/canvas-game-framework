@@ -1,0 +1,18 @@
+---
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    # Every sunday
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+
+  - package-ecosystem: npm
+    directory: "/"
+    # Daily 12:30pm UTC
+    schedule:
+      interval: "daily"
+      time: "12:30"
+    open-pull-requests-limit: 5
+    versioning-strategy: increase-if-necessary
