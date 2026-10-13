@@ -1,2 +1,3 @@
-export { GameCanvas } from "./classes/GameCanvas";
-export { GameEngine } from "./classes/GameEngine";
+export { GameCanvas } from "./rendering/GameCanvas";
+export { GameEngine } from "./core/GameEngine";
+export type { IEngineStatus } from "./core/status/IEngineStatus";

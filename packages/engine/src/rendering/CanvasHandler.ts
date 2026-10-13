@@ -1,9 +1,13 @@
-import { GameCanvas } from "../index";
-import { IGameCanvas } from "../interfaces/IGameCanvas";
+import { IGameCanvas } from "./IGameCanvas";
 import $ from "jquery";
+import { GameCanvas } from "./GameCanvas";
+import { ICanvasHandler } from "./ICanvasHandler";
 
 
-export class CanvasHandler {
+export class CanvasHandler implements ICanvasHandler {
+    render(): void {
+        console.log("render");
+    }
     private canvases: IGameCanvas[] = [];
 
 

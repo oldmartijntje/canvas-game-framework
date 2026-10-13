@@ -4,11 +4,12 @@ import typescriptLogo from './assets/typescript.svg'
 import viteLogo from './assets/vite.svg'
 import { setupCounter } from './counter.ts'
 
-import { GameEngine } from "canvas-game-development-framework";
+import { GameEngine, type IEngineStatus } from "canvas-game-development-framework";
 const game = new GameEngine();
 console.log(GameEngine.engineVersion());
-game.canvas().generate("#center");
-game.canvas().register("#center");
+game.onStatusChange((s: IEngineStatus) => (console.log(s.name)));
+game.canvas.generate("#center");
+game.canvas.register("#center");
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="center">
   <div class="hero">
@@ -60,6 +61,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <div class="ticks"></div>
 <section id="spacer"></section>
 `
-game.canvas().generate("#center");
-game.canvas().register("#center");
+game.canvas.generate("#center");
+game.canvas.register("#center");
+game.start();
+// pauseButton.onclick = () => engine.pause();
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
