@@ -3,8 +3,12 @@ import heroImg from './assets/hero.png'
 import typescriptLogo from './assets/typescript.svg'
 import viteLogo from './assets/vite.svg'
 import { setupCounter } from './counter.ts'
-import { add } from 'canvas-game-framework'
 
+import { GameEngine } from "canvas-game-development-framework";
+const game = new GameEngine();
+console.log(GameEngine.engineVersion());
+game.canvas().generate("#center");
+game.canvas().register("#center");
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="center">
   <div class="hero">
@@ -13,7 +17,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <img src="${viteLogo}" class="vite" alt="Vite logo" />
   </div>
   <div>
-    <h1>2 + 3 = ${add(2, 3)}</h1>
     <p>Edit <code>src/main.ts</code> and save to test <code>HMR</code></p>
   </div>
   <button id="counter" type="button" class="counter"></button>
@@ -57,5 +60,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <div class="ticks"></div>
 <section id="spacer"></section>
 `
-
+game.canvas().generate("#center");
+game.canvas().register("#center");
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)

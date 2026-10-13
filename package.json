@@ -1,5 +1,5 @@
 {
-	"name": "canvas-game-framework",
+	"name": "canvas-game-development-framework",
 	"private": true,
 	"workspaces": [
 		"packages/*",

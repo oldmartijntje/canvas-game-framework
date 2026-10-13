@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "canvas-game-framework": "*"
+    "canvas-game-development-framework": "*"
   },
   "devDependencies": {
     "typescript": "~6.0.2",
