@@ -64,5 +64,17 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 // game.canvas.generate("#center");
 // game.canvas.register("#center");
 game.start();
+setTimeout(() => {
+    console.log("pause")
+    game.pause();
+    setTimeout(() => {
+        console.log("step")
+        game.step();
+        setTimeout(() => {
+            console.log("resume")
+            game.resume();
+        }, 2000)
+    }, 1000)
+}, 5000)
 // pauseButton.onclick = () => engine.pause();
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
